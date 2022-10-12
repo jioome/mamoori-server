@@ -6,11 +6,7 @@ import lombok.Getter;
 @Getter
 @Builder
 public class PostResDto {
-<<<<<<< HEAD
     private Long postId;
-=======
-
->>>>>>> 105b95b (feat/17/will 진행중)
     private String title;
     private String content;
     private String receiver;

@@ -13,7 +13,8 @@ import lombok.Setter;
 public class Will extends BaseTimeEntity{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	@Column(name = "will_id")
+	private Long willId;
 
 	@Column
 	private String title;
@@ -29,4 +30,19 @@ public class Will extends BaseTimeEntity{
 	private User user;
 
 
+	public Will() {
+
+	}
+
+	public Will(Long willId, String title, String content, String receiver, User user) {
+		this.willId = willId;
+		this.title = title;
+		this.content = content;
+		this.receiver = receiver;
+		this.user = user;
+	}
+
+	public Will(String title, String content, Long userId) {
+		super();
+	}
 }

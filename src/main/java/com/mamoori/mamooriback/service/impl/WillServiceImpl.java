@@ -2,6 +2,7 @@ package com.mamoori.mamooriback.service.impl;
 
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mamoori.mamooriback.controller.request.WillRequest;
@@ -14,11 +15,14 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class WillServiceImpl  {
-	// private final WillRepository willRepository;
+	@Autowired
+	private WillRepository willRepository;
 
-	// public Will createWill(WillRequest will){
-	//
-	//
-	// }
+	public Will create(WillRequest willRequest){
+		final Will will = new Will(willRequest.getTitle(), willRequest.getContent(), willRequest.getUserId());
+		return willRepository.save(will);
+	}
+
+
 
 }
