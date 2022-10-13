@@ -42,7 +42,9 @@ public class Will extends BaseTimeEntity{
 		this.user = user;
 	}
 
-	public Will(String title, String content, Long userId) {
-		super();
+	public Will(String title, String content, User user) {
+		this.title = title;
+		this.content = content;
+		this.user = user;
 	}
 }

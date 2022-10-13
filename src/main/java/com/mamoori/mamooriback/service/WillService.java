@@ -9,4 +9,5 @@ import com.mamoori.mamooriback.entity.Will;
 
 public interface WillService {
 	Page<Will> getWillList(Map<String,Object> filter, Pageable pageable);
+	Will read(Long willId);
 }
